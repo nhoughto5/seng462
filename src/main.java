@@ -17,7 +17,12 @@ public class main{
 		
 		switch(parsed[0].toString().toLowerCase()){
 		case "quote":
-			System.out.println("QUOTE");
+			try {
+				System.out.println(quote_server_connect.getQuote(input));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 		case "add":
 			System.out.println("ADD");
@@ -29,19 +34,6 @@ public class main{
 			System.out.println("SELL");
 			break;
 		}
-		
-		/*
-		 * String quoteReturned = null;
-		try {
-			quoteReturned = quote_server_connect.getQuote(input);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		System.out.println(quoteReturned);
-		*/
-		
 		
 	}
 	
